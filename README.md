@@ -26,6 +26,7 @@ pip install flask
 ```
 6. Éxecuter l'application sur `localhost:5000`:
 ```
+cd src
 flask run
 ```
 
