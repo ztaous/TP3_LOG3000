@@ -37,11 +37,21 @@
 </div>
 
 <script>
+   /*
+    * Ajoute le numéro du bouton sur l'affichage de la calculatrice.
+    *
+    * @param {any} value The value to append to the display.
+    * @returns {void}
+   */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
-
+   /*
+    * Efface l'affichage de la calculatrice.
+    *
+    * @returns {void}
+   */
    function clearDisplay() {
       document.getElementById('display').value = '';
    }

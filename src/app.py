@@ -11,6 +11,15 @@ OPS = {
 }
 
 def calculate(expr: str):
+    """
+    Cette fonction calcule le résultat d'une expression mathématique simple donnée sous forme de chaîne de caractères.
+
+    Parameters:
+        expr (str): L'expression mathématique à calculer, par exemple "3 + 4".
+
+    Returns:
+        float: Le résultat du calcul de l'expression.
+    """
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -19,6 +28,7 @@ def calculate(expr: str):
     op_pos = -1
     op_char = None
 
+    ## Assigner le caractère de l'opérateur et sa position pour pouvoir séparer les opérandes ensuite
     for i, ch in enumerate(s):
         if ch in OPS:
             if op_pos != -1:
@@ -39,10 +49,14 @@ def calculate(expr: str):
     except ValueError:
         raise ValueError("operands must be numbers")
 
-    return OPS[op_char](a, b)
+    return OPS[op_char](a, b) ## Transforme l'opérateur trouvé en fonction
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """
+    Retourne la page d'accueil de la calculatrice. 
+    Si une expression est soumise via POST, elle est calculée et le résultat est affiché.
+    """
     result = ""
     if request.method == 'POST':
         expression = request.form.get('display', '')
