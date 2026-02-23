@@ -59,14 +59,15 @@ L'application sera accessible à l'adresse `http://localhost:5000` dans votre na
 
 Une suite de tests sera ajoutée au repositoire pour valider les opérations mathématiques et la logique de parsing.
 
-### Comment exécuter les tests (à venir)
+### Comment exécuter les tests
 
 ```
-cd server
-python -m pytest
+cd src
+pip install pytest
+pytest tests/
 ```
 
-À ce stade, vous pouvez tester l'application manuellement en entrant diverses expressions dans l'interface.
+Vous pouvez obtenir des instructions plus spécifiques en suivant le README trouvé dans le dossier tests.
 
 ## Flux de contribution
 
