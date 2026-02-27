@@ -25,16 +25,24 @@ def calculate(expr: str):
 
     s = expr.replace(" ", "")
 
-    op_pos = -1
-    op_char = None
+    binary_ops = []
 
-    ## Assigner le caractère de l'opérateur et sa position pour pouvoir séparer les opérandes ensuite
+    ## Trouver uniquement l'opérateur binaire; ignorer + et - utilisés comme signe unaire
     for i, ch in enumerate(s):
-        if ch in OPS:
-            if op_pos != -1:
-                raise ValueError("only one operator is allowed")
-            op_pos = i
-            op_char = ch
+        if ch not in OPS:
+            continue
+
+        if ch in "+-" and (i == 0 or s[i - 1] in OPS):
+            continue
+
+        binary_ops.append((i, ch))
+
+    if len(binary_ops) > 1:
+        raise ValueError("only one operator is allowed")
+    if not binary_ops:
+        raise ValueError("invalid expression format")
+
+    op_pos, op_char = binary_ops[0]
 
     if op_pos <= 0 or op_pos >= len(s) - 1:
         # operator at start/end or not found
