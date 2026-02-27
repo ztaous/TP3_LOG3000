@@ -12,7 +12,7 @@ def add(a,b):
 
 def subtract(a,b):
     """
-    Retourne la différence de b et a.
+    Retourne la différence de a et b.
 
     Parameters:
         a (float): Le premier nombre.
@@ -20,7 +20,7 @@ def subtract(a,b):
     Returns:
         float: La différence de a et b.
     """
-    return b - a
+    return a - b
 
 def multiply(a,b):
     """
