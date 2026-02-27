@@ -36,7 +36,7 @@ def multiply(a,b):
 
 def divide(a,b):
     """
-    Retourne le quotient de b et a.
+    Retourne le quotient de a et b.
 
     Parameters:
         a (float): Le premier nombre.
@@ -44,4 +44,4 @@ def divide(a,b):
     Returns:
         float: Le quotient de a et b.
     """
-    return a // b
+    return a / b
