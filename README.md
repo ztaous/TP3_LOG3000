@@ -26,7 +26,7 @@ python -m venv venv
 3. **Activer l'environnement virtuel** :
    - **Sur Linux/macOS** :
      ```
-     ./venv/bin/activate
+     source venv/bin/activate
      ```
    - **Sur Windows** :
      ```
